@@ -7,4 +7,7 @@ module.exports = function(app) {
 	app.route('/posts')
 		.get(posts.list)
 		.post(posts.create);
+
+	app.route('/posts/:postId')
+		.put(posts.update);
 };

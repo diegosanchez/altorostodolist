@@ -41,12 +41,16 @@ exports.list = function(req, res) {
 	});
 };
 
-/*
-exports.mark_done = function  (req, res) {
-	var id = req.body.id;
-	Post.findById(id, function (err, post) {
+exports.update = function  (req, res) {
+	Post.findById(req.params.postId, function (err, post) {
 
-		post.status = 'done';
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		}
+
+		post.status = req.body.status;
 
 		post.save( function (err) {
 			if (err) {
@@ -57,7 +61,5 @@ exports.mark_done = function  (req, res) {
 				res.json(post);
 			}
 		});
-		// body...
-	}
-}
-*/
+	});
+};

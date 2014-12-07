@@ -40,3 +40,24 @@ exports.list = function(req, res) {
 		}
 	});
 };
+
+/*
+exports.mark_done = function  (req, res) {
+	var id = req.body.id;
+	Post.findById(id, function (err, post) {
+
+		post.status = 'done';
+
+		post.save( function (err) {
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				res.json(post);
+			}
+		});
+		// body...
+	}
+}
+*/

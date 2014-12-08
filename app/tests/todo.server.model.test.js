@@ -5,17 +5,17 @@
  */
 var should = require('should'),
 	mongoose = require('mongoose'),
-	Post = mongoose.model('Post');
+	Todo = mongoose.model('Todo');
 
 /**
  * Globals
  */
-var post;
+var todo;
 
 /**
  * Unit tests
  */
-describe('Post Model Unit Tests:', function() {
+describe('Todo Model Unit Tests:', function() {
 	beforeEach(function(done) {
 		// For future usages
 		done();
@@ -23,27 +23,26 @@ describe('Post Model Unit Tests:', function() {
 
 	describe('Method Save', function() {
 		it('should not saved because there are missing fields', function(done) {
-			post = new Post();
-			return post.save(function(err) {
+			todo = new Todo();
+			return todo.save(function(err) {
 				should.exist(err);
 				done();
 			});
 		});
 		it('should be saved because all parameters were supplied', function(done) {
-			post = new Post({
+			todo = new Todo({
 				title: 'This is the title'
 			});
-			return post.save(function(err) {
-				console.log(err);
+			return todo.save(function(err) {
 				should.not.exist(err);
-				post.should.have.properties( { status: 'none'});
+				todo.should.have.properties( { status: 'none'});
 				done();
 			});
 		});
 	});
 
 	afterEach(function(done) { 
-		Post.remove().exec();
+		Todo.remove().exec();
 		done();
 	});
 });

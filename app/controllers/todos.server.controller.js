@@ -5,44 +5,44 @@
  */
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
-	Post = mongoose.model('Post'),
+	Todo = mongoose.model('Todo'),
     _ = require('lodash');
 
 /**
- * Create a Post
+ * Create a Todo
  */
 exports.create = function(req, res) {
-	var post = new Post( req.body );
+	var todo = new Todo( req.body );
 
-	post.save( function (err) {
+	todo.save( function (err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(post);
+			res.json(todo);
 		}
 	});
 
 };
 
 /**
- * List of Posts
+ * List of Todos
  */
 exports.list = function(req, res) {
-	Post.find( function (err, posts) {
+	Todo.find( function (err, todo) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(posts);
+			res.json(todo);
 		}
 	});
 };
 
 exports.update = function  (req, res) {
-	Post.findById(req.params.postId, function (err, post) {
+	Todo.findById(req.params.postId, function (err, todo) {
 
 		if (err) {
 			return res.status(400).send({
@@ -50,15 +50,15 @@ exports.update = function  (req, res) {
 			});
 		}
 
-		post.status = req.body.status;
+		todo.status = req.body.status;
 
-		post.save( function (err) {
+		todo.save( function (err) {
 			if (err) {
 				return res.status(400).send({
 					message: errorHandler.getErrorMessage(err)
 				});
 			} else {
-				res.json(post);
+				res.json(todo);
 			}
 		});
 	});

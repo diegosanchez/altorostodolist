@@ -1,10 +1,10 @@
 'use strict';
 
 (function() {
-	// Posts Controller Spec
-	describe('Posts Controller Tests', function() {
+	// Todos Controller Spec
+	describe('Todos Controller Tests', function() {
 		// Initialize global variables
-		var PostsController,
+		var TodosController,
 			scope,
 			$httpBackend,
 			$stateParams,
@@ -44,8 +44,8 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
-			// Initialize the Posts controller.
-			PostsController = $controller('PostsController', {
+			// Initialize the Todos controller.
+			TodosController = $controller('TodosController', {
 				$scope: scope
 			});
 		}));

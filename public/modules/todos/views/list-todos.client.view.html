@@ -1,0 +1,15 @@
+<section data-ng-controller="TodosController" data-ng-init="find()">
+	<div class="page-header">
+		<h1>Todos</h1> 
+		<h5>{{ done() }} / {{ todos.length }} </h5> 
+	</div>
+	<div class="list-group">
+		<div data-ng-repeat="todo in todos" class="list-group-item">
+			<h3 class="list-group-item-heading" data-ng-class="{done: todo.status === 'done'}" data-ng-bind="todo.title"></h3>
+			<a href="#!/todos" ng-click="markDone(todo._id)"><i  class="glyphicon glyphicon-ok"></i></a>
+		</div>
+	</div>
+	<div class="alert alert-warning text-center" data-ng-if="todos.$resolved && !todos.length">
+		No articles yet, why don't you <a href="/#!/todos/create">create one</a>?
+	</div>
+</section>

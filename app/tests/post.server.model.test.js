@@ -31,8 +31,7 @@ describe('Post Model Unit Tests:', function() {
 		});
 		it('should be saved because all parameters were supplied', function(done) {
 			post = new Post({
-				title: 'This is the title',
-				body: 'This is the body'
+				title: 'This is the title'
 			});
 			return post.save(function(err) {
 				console.log(err);

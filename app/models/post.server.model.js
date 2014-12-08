@@ -18,10 +18,6 @@ var PostSchema = new Schema({
 		trim: true,
 		required: 'Title cannot be blank'
 	},
-	body: {
-		type: String,
-		required: 'Body cannot be blank'
-	},
 	status: {
 		type: String,
 		default: states[0],

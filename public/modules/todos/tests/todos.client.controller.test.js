@@ -50,9 +50,41 @@
 			});
 		}));
 
-		it('Should do some controller test', inject(function() {
-			// The test logic
-			// ...
+		it('should find todos created', inject(function(Todos) {
+			var todo = new Todos({ title: 'this is the todo title'});
+			var todos = [todo];
+
+			$httpBackend.expectGET('todos').respond(todos);                                                                                                       
+
+			scope.find();
+
+			$httpBackend.flush();
+
+      		expect(scope.todos).toEqualData(todos);
+		}));
+
+		it('should create a new todo', inject(function(Todos) {
+		  var attributes = { title: 'todo title'};				
+	      var todoSample = new Todos( attributes );
+
+	      // Fixture mock form input values
+	      scope.title = attributes.title;
+
+	      $httpBackend.expectPOST('todos', todoSample).respond(todoSample);
+
+	      // Run controller functionality
+	      scope.create();
+	      $httpBackend.flush();
+
+	      expect(scope.title).toEqual('');
+
+	      expect($location.path()).toContain('todos');
+		}));
+
+		it('should mark a todo as done', inject(function(Todos) {
+          $httpBackend.expectPUT('todos/0', {status:'done'}).respond();
+          scope.markDone(0);
+          $httpBackend.flush();
 		}));
 	});
 }());

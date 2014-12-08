@@ -4,14 +4,13 @@ angular.module('todos').controller('TodosController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Todos) {
 		$scope.create = function() {
 			var todo = new Todos({
-				title: this.title,
+				title: $scope.title,
 			});
 
 			todo.$save(function(response) {
 				$location.path('todos');
 
 				$scope.title = '';
-				$scope.body = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

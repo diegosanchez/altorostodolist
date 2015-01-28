@@ -183,12 +183,12 @@ module.exports = function(grunt) {
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
 
-  // Heroku deployment
-  //
-  // Staging
-  grunt.registerTask( 'heroku:development', [ 'build' ] );
+	// heroku deployment
+	//
+	// staging
+	grunt.registertask( 'heroku:development', [ 'build' ] );
 
-  // Production
-  grunt.registerTask( 'heroku:production', [ 'build' ] );
+	// production
+	grunt.registerTask( 'heroku:production', [ 'build' ] );
 };
 }());

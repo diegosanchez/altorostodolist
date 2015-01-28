@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+  'use strict';
 
 /**
  * Module dependencies.
@@ -73,3 +74,5 @@ describe('User Model Unit Tests:', function() {
 		done();
 	});
 });
+
+}());

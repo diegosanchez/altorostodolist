@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -52,3 +53,5 @@ exports.hasAuthorization = function(roles) {
 		});
 	};
 };
+
+}());

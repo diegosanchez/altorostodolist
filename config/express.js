@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -15,7 +16,7 @@ var fs = require('fs'),
 	cookieParser = require('cookie-parser'),
 	helmet = require('helmet'),
 	passport = require('passport'),
-	mongoStore = require('connect-mongo')({
+	MongoStore = require('connect-mongo')({
 		session: session
 	}),
 	flash = require('connect-flash'),
@@ -90,7 +91,7 @@ module.exports = function(db) {
 		saveUninitialized: true,
 		resave: true,
 		secret: config.sessionSecret,
-		store: new mongoStore({
+		store: new MongoStore({
 			db: db.connection.db,
 			collection: config.sessionCollection
 		})
@@ -161,3 +162,4 @@ module.exports = function(db) {
 	// Return Express server instance
 	return app;
 };
+}());

@@ -1,6 +1,6 @@
+(function() {
 'use strict';
 
-(function() {
 	// Todos Controller Spec
 	describe('Todos Controller Tests', function() {
 		// Initialize global variables

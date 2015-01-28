@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 angular.module('todos').factory('Todos', [ '$resource', function($resource) {
@@ -9,3 +10,4 @@ angular.module('todos').factory('Todos', [ '$resource', function($resource) {
 		}
 	});
 } ]);
+}());

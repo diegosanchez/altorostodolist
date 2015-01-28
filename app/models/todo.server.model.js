@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -26,3 +27,4 @@ var PostSchema = new Schema({
 });
 
 mongoose.model('Todo', PostSchema);
+}());

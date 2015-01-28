@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 angular.module('todos').controller('TodosController', ['$scope', '$stateParams', '$location', 'Todos', 
@@ -52,3 +53,4 @@ angular.module('todos').controller('TodosController', ['$scope', '$stateParams',
 
 	}
 ]);
+}());

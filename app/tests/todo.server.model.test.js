@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -46,3 +47,5 @@ describe('Todo Model Unit Tests:', function() {
 		done();
 	});
 });
+
+}());

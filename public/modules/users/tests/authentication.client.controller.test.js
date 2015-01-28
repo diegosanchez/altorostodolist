@@ -1,6 +1,6 @@
+(function() {
 'use strict';
 
-(function() {
 	// Authentication controller Spec
 	describe('AuthenticationController', function() {
 		// Initialize global variables

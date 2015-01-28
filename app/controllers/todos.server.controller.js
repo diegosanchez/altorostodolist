@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -63,3 +64,4 @@ exports.update = function  (req, res) {
 		});
 	});
 };
+}());

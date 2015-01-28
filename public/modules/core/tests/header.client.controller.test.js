@@ -1,6 +1,6 @@
+(function() {
 'use strict';
 
-(function() {
 	describe('HeaderController', function() {
 		//Initialize global variables
 		var scope,

@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 // Authentication service for user variables
@@ -12,3 +13,4 @@ angular.module('users').factory('Authentication', [
 		return _this._data;
 	}
 ]);
+}());

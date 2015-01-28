@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -243,3 +244,6 @@ exports.changePassword = function(req, res) {
 		});
 	}
 };
+
+}());
+

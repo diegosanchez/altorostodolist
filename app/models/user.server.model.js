@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -144,3 +145,4 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 };
 
 mongoose.model('User', UserSchema);
+}());

@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -40,3 +41,4 @@ exports.getErrorMessage = function(err) {
 
 	return message;
 };
+}());

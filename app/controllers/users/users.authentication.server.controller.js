@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -204,3 +205,5 @@ exports.removeOAuthProvider = function(req, res, next) {
 		});
 	}
 };
+
+}());

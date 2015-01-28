@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 var todos = require('../../app/controllers/todos.server.controller');
@@ -11,3 +12,5 @@ module.exports = function(app) {
 	app.route('/todos/:postId')
 		.put(todos.update);
 };
+
+}());

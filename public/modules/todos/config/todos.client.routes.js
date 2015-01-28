@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 //Setting up route
@@ -15,3 +16,4 @@ angular.module('todos').config(['$stateProvider',
 		});
 	}
 ]);
+}());

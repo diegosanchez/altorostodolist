@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 // Todos module config
@@ -9,3 +10,4 @@ angular.module('todos').run(['Menus',
 		Menus.addSubMenuItem('topbar', 'todos', 'New todo', 'todos/create');
 	}
 ]);
+}());

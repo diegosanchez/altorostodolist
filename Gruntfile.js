@@ -154,15 +154,12 @@ module.exports = function(grunt) {
 	grunt.task.registerTask('loadConfig', 'Task that loads the config into a grunt option.', function() {
 		var init = require('./config/init')();
 		
-    // It ignores files either for dev or prod
-    // var config = require('./config/config');
+		// It ignores files either for dev or prod
+	  // var config = require('./config/config');
     
-    // It loads every file included by the project regardless NODE_ENV
-    // It makes sence because it's packing min file.
-    var all_config = require('./config/env/all');
-
-    console.log('all config assets - js:', all_config.assets.js );
-    console.log('all config assets - css:', all_config.assets.css );
+	  // It loads every file included by the project regardless NODE_ENV
+	  // It makes sence because it's packing min file.
+	  var all_config = require('./config/env/all');
 
 		grunt.config.set('applicationJavaScriptFiles', all_config.assets.js);
 		grunt.config.set('applicationCSSFiles', all_config.assets.css);

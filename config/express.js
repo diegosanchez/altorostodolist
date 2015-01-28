@@ -41,6 +41,9 @@ module.exports = function(db) {
 	app.locals.jsFiles = config.getJavaScriptAssets();
 	app.locals.cssFiles = config.getCSSAssets();
 
+  console.warn('assets loaded by express - js:', app.locals.jsFiles);
+  console.warn('assets loaded by express - css:', app.locals.cssFiles);
+
 	// Passing the request url to environment locals
 	app.use(function(req, res, next) {
 		res.locals.url = req.protocol + '://' + req.headers.host + req.url;

@@ -148,14 +148,24 @@ module.exports = function(grunt) {
 
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
+	grunt.option('verbose', true);
 
 	// A Task for loading the configuration object
 	grunt.task.registerTask('loadConfig', 'Task that loads the config into a grunt option.', function() {
 		var init = require('./config/init')();
-		var config = require('./config/config');
+		
+    // It ignores files either for dev or prod
+    // var config = require('./config/config');
+    
+    // It loads every file included by the project regardless NODE_ENV
+    // It makes sence because it's packing min file.
+    var all_config = require('./config/env/all');
 
-		grunt.config.set('applicationJavaScriptFiles', config.assets.js);
-		grunt.config.set('applicationCSSFiles', config.assets.css);
+    console.log('all config assets - js:', all_config.assets.js );
+    console.log('all config assets - css:', all_config.assets.css );
+
+		grunt.config.set('applicationJavaScriptFiles', all_config.assets.js);
+		grunt.config.set('applicationCSSFiles', all_config.assets.css);
 	});
 
 	// Default task(s).
